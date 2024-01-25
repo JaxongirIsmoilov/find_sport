@@ -1,9 +1,16 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:find_sport/presentation/auth/register/register.dart';
 import 'package:find_sport/presentation/home/home_page.dart';
 import 'package:find_sport/presentation/intro/intro_page.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+import 'di/di.dart';
+
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await EasyLocalization.ensureInitialized();
+  setup();
   runApp(const MyApp());
 }
 
