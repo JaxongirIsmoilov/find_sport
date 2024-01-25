@@ -10,9 +10,9 @@ part 'intro_state.dart';
 class IntroBloc extends Bloc<IntroEvent, IntroState> {
 
   final List<LanguageSelectorModel> languages = [
-    const LanguageSelectorModel('assets/flags/flag_russia.png', 'Russian'),
-    const LanguageSelectorModel('assets/flags/flag_uzbekistan.png', 'Uzbek'),
-    const LanguageSelectorModel('assets/flags/flag_uzbekistan.png', 'Cyrillic'),
+    const LanguageSelectorModel('assets/flags/lang_ru.png', 'Russian'),
+    const LanguageSelectorModel('assets/flags/lang_uz.png', 'Uzbek'),
+    const LanguageSelectorModel('assets/flags/lang_uz.png', 'Kril'),
   ];
 
   IntroBloc() : super(IntroInitial()) {

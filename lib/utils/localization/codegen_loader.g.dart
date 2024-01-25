@@ -80,5 +80,5 @@ static const Map<String,dynamic> uz = {
   "address": "Manzil nomi",
   "address_enter": "Manzil nomini kiritng"
 };
-static const Map<String, Map<String,dynamic>> mapLocales = {"ru": ru, "uzc": kril, "uz": uz};
+static const Map<String, Map<String,dynamic>> mapLocales = {"ru": ru, "kril": kril, "uz": uz};
 }
