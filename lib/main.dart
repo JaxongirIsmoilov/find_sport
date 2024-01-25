@@ -2,16 +2,27 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:find_sport/presentation/auth/register/register.dart';
 import 'package:find_sport/presentation/home/home_page.dart';
 import 'package:find_sport/presentation/intro/intro_page.dart';
+import 'package:find_sport/utils/localization/codegen_loader.g.dart';
 import 'package:flutter/material.dart';
 
 import 'di/di.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await EasyLocalization.ensureInitialized();
   setup();
-  runApp(const MyApp());
+  runApp(EasyLocalization(
+    supportedLocales: const [
+      Locale('ru'),
+      Locale('uz'),
+      Locale('kril'),
+    ],
+    path: 'lib/utils/localization',
+    fallbackLocale: const Locale('uz'),
+    assetLoader: const CodegenLoader(),
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -21,6 +32,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -44,9 +58,9 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: 'intro',
       routes: {
-        'intro' : (context) => IntroPage(),
-        'register' : (context) => RegisterPage(),
-        'home' : (context) => HomePage()
+        'intro': (context) => IntroPage(),
+        'register': (context) => RegisterPage(),
+        'home': (context) => HomePage()
       },
     );
   }
