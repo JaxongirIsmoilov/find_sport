@@ -16,6 +16,8 @@ class IntroPage extends StatefulWidget {
 class _IntroPageState extends State<IntroPage> {
 
   final _bloc = IntroBloc();
+  LanguageSelectorModel selectedValue =
+  const LanguageSelectorModel('assets/flags/lang_uz.png', 'Uzbek');
 
   @override
   void initState() {
