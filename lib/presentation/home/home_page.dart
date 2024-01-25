@@ -60,7 +60,6 @@ class _HomePageState extends State<HomePage> {
     if (!await LocationService().checkPermission()) {
       await LocationService().requestPermission();
     }
-    // await fetchCurrentLocation();
   }
 
   @override
@@ -252,18 +251,15 @@ class _HomePageState extends State<HomePage> {
                                 location?.lat = point.latitude;
                                 location?.long = point.longitude;
                               });
-
-                              print('-------${point.latitude}');
-                              print('-------${point.longitude}');
                             },
                             zoomGesturesEnabled: true,
                             mapObjects: [
                               PlacemarkMapObject(
                                 mapId: const MapObjectId('0'),
                                 icon: PlacemarkIcon.single(PlacemarkIconStyle(
-                                  scale: 5,
+                                  scale: 0.1,
                                   image: BitmapDescriptor.fromAssetImage(
-                                      'assets/icons/location.png'),
+                                      'assets/icons/ic_loc.png'),
                                 )),
                                 point: Point(
                                     latitude: location?.lat ?? 0.0,
