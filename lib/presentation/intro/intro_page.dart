@@ -88,7 +88,7 @@ class _IntroPageState extends State<IntroPage> {
                                       height: 16,
                                     ),
                                     const SizedBox(
-                                      width: 4,
+                                      width: 10,
                                     ),
                                     Expanded(
                                       child: Text(
@@ -131,6 +131,7 @@ class _IntroPageState extends State<IntroPage> {
                                     .toList(),
                                 value: selectedLanguage,
                                 onChanged: (LanguageSelectorModel? value) {
+                                  print("LanguageSelectorModel");
                                   if (value?.name == 'Uzbek') {
                                     context.setLocale(const Locale('uz'));
                                   }
@@ -197,7 +198,7 @@ class _IntroPageState extends State<IntroPage> {
                                           width: 24,
                                           height: 24,
                                           clipBehavior: Clip.antiAlias,
-                                          decoration: BoxDecoration(),
+                                          decoration: const BoxDecoration(),
                                           child: const Stack(children: [
                                             Icon(
                                               Icons.arrow_forward,
@@ -223,62 +224,3 @@ class _IntroPageState extends State<IntroPage> {
     );
   }
 }
-
-/*
-Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                width: 52,
-                                height: 58,
-                                child: Stack(
-                                  children: [
-                                    Positioned(
-                                      left: 4,
-                                      top: 0,
-                                      child: Container(
-                                        width: 48,
-                                        height: 48,
-                                        decoration: const ShapeDecoration(
-                                          color: Color(0xFF01001F),
-                                          shape: OvalBorder(),
-                                        ),
-                                      ),
-                                    ),
-                                    Positioned(
-                                      left: 0,
-                                      top: 10,
-                                      child: Opacity(
-                                        opacity: 0.20,
-                                        child: Container(
-                                          width: 48,
-                                          height: 48,
-                                          decoration: const ShapeDecoration(
-                                            color: Color(0xFF01001F),
-                                            shape: OvalBorder(),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    Positioned(
-                                      left: 16,
-                                      top: 12,
-                                      child: Container(
-                                        width: 24,
-                                        height: 24,
-                                        clipBehavior: Clip.antiAlias,
-                                        decoration: BoxDecoration(),
-                                        child: const Stack(children: [
-                                          Icon(
-                                            Icons.arrow_forward,
-                                            color: Colors.white,
-                                          ),
-                                        ]),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          )
- */
